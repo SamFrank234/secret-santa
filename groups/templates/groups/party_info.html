@@ -1,0 +1,14 @@
+{%extends 'groups/base.html'%}
+{%block content%}
+    {% if party%}
+            <h2>
+                {{party.name}} 
+            </h2>
+                <p> Join Deadline: {{party.join_deadline}}</p>
+                <p> Date of Gift Exchange: {{party.exchange_date}}</p>
+                <p> Spending Limit: ${{party.spending_limit}}</p>
+            
+    {% else %}
+        <p>No party specified.</p>
+    {% endif %}
+{%endblock%}

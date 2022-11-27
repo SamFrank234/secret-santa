@@ -1,0 +1,33 @@
+{%extends 'groups/base.html'%}
+{%block content%}
+        <h2>Welcome to Secret Santa. Select an option below </h2>
+   
+    <div class="index">
+        <button type="button" id="create"> Create a New Secret Santa Party </button> <br><br>
+        <form method="get">
+            <button type="button" id="join">Join a Secret Santa Party</button> <br>
+        </form>
+    </div>
+    {% if form.errors %}
+        {% include 'groups/error_form.html' with form=form url=""%}
+    {% else %}
+        <div hidden id="pwdform" style="text-align:center; padding-top: 10px;">
+            {% include 'groups/form.html' with form=form url="" %}
+        </div>
+    {% endif %}
+
+    <script>
+        document.getElementById("create").onclick = function() {createParty()};
+        document.getElementById("join").onclick = function() {joinParty()};
+
+        function createParty(){
+            var curr_url = window.location.href;
+            curr_url+="create/";
+            window.location.assign(curr_url);
+        }
+
+        function joinParty(){
+            document.getElementById("pwdform").hidden = false;
+        }
+    </script>
+{%endblock%}

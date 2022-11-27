@@ -1,0 +1,29 @@
+<form action="{{url}}" method="post">
+    {% csrf_token %}
+
+    {%for error in form.non_field_errors%}
+        <div class="error">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {%endfor%}
+    {%for field in form%}
+        {%for error in field.errors%}
+            <div class="error">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {%endfor%}
+    {%endfor%}
+
+    {% for field in form %}
+        <div class="fieldWrapper">
+            <label for="{{field.id_for_label}}"> {{field.label}} </label>   
+            {{ field }}
+            
+        </div>
+
+    {% endfor %}
+    <div class="submit_button"> 
+        <input type="submit" value="Submit" >
+    </div>
+
+</form>

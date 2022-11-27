@@ -1,0 +1,12 @@
+{%extends 'groups/base.html'%}
+{%block content %}
+    <h2> Enter the following information to create a Secret Santa Party</h2>
+
+    <h3> Your Party's Information:</h3>
+    {%if form.errors%}
+        {%include 'groups/error_form.html' with form=form url="/create/"%}
+    {%else%}
+        {%include 'groups/form.html' with form=form url="/create/"%}
+    {%endif%}
+
+{%endblock%}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block title %} <title> Sam's Secret Santa Machine </title> {%endblock%}
+        <meta charset="utf-8">
+        <style>
+            h1 {
+                text-align: center;
+                color: rgb(60, 196, 250);
+                font-size: 400%;
+            }
+            h2, h3, p, label{
+                text-align: center;
+                color: rgb(60, 196, 250);
+            }
+            body{
+                background-color: red;
+                background-image: linear-gradient(45deg, white 25%, transparent 25.5%, transparent 50%, white 50.5%, white 75%, transparent 75.5%, transparent);
+                background-size: 20px 20px;
+            }
+            .display{
+                background: white;
+                width: 40%;
+                margin-left: auto;
+                margin-right: auto;
+                padding-bottom: 10px;
+            }
+            .title{
+                background: white;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .index{
+                text-align: center;
+                color: rgb(60, 196, 250);
+            }
+            .fieldWrapper{
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .error{
+                text-align: center;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="title">
+                <h1>SAM'S SECRET SANTA MACHINE</h1>
+            </div>
+            <div class="display">
+                {%block content%}
+                {%endblock%}
+            </div>
+        </main>
+    </body> 
+</html>

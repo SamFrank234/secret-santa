@@ -1,0 +1,10 @@
+{%extends 'groups/base.html'%}
+{%block content%}
+<body>
+        <h2> Enter your Information to Join {{party_name}}:</h2>
+        {% if form.errors %}
+            {%include 'groups/form.html' with form=form url="/join/"}
+        {% else %}
+            {% include 'groups/error_form.html' with form=form url="/join/"%}
+        {% endif %}
+{%endblock%}
